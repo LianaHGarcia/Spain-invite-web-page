@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="WebAesthetic.css">
+    <link rel="stylesheet" type="text/css" href="yes-answer.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ADD8E6;
+        }
+
+        .content-hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".yesButton").click(function(){
+                // Open a new window when "Yes" is pressed
+                var newWindow = window.open('', '_blank', 'width=600,height=400');
+
+                // Append the content to the new window
+                var content = $(".gif_container").html();
+                newWindow.document.write('<html><head><title>Surprise Window</title>' +
+                    '<link rel="stylesheet" type="text/css" href="WebAesthetic.css">' +
+                    '<link rel="stylesheet" type="text/css" href="yes-answer.css"></head><body>' +
+                    content + '</body></html>');
+
+                // Remove the content from the original window
+                $(".gif_container").addClass("content-hidden");
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="header_text">Do you want to go to Spain together?</h1>
+    <img src="/Users/liana/Desktop/beach.gif" alt="Animated beach">
+    <div class="buttons">
+        <button class="btn yesButton">Yes</button>
+        <button class="btn noButton">No</button>
+    </div>
+    <div class="gif_container content-hidden">
+        <!-- Content to appear when "Yes" is pressed -->
+        <div class="container">
+            <div>
+                <h1 class="header_text">Yippie! Shots, shots, shotssss!!</h1>
+            </div>
+            <div class="gif_container">
+                <img src="/Users/liana/Desktop/celebrate.gif" alt="Animated snoopy">
+            </div>
+            <p class="new_text"> See you soon!</p>
+        </div>
+    </div>
+</body>
+</html>
