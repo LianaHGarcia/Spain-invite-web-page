@@ -22,11 +22,11 @@
         $(document).ready(function(){
             $(".yesButton").click(function(){
                 // Open a new window when "Yes" is pressed
-                var newTab = window.open('', '_blank');
+                var newWindow = window.open('', '_blank','width=1000','height=1000');
 
                 // Append the content to the new window
                 var content = $(".gif_container").html();
-                newTab.document.write('<html><head><title>Surprise Window</title>' +
+                newWindow.document.write('<html><head><title>Surprise Window</title>' +
                     '<link rel="stylesheet" type="text/css" href="WebAesthetic.css">' +
                     '<link rel="stylesheet" type="text/css" href="yes-answer.css"></head><body>' +
                     content + '</body></html>');
